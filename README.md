@@ -275,4 +275,4 @@ For questions about:
 ---
 
 **Version**: 1.0.0 | **Last Updated**: September 25, 2026
-**Course**: CS 651 Capstone Project | **Status**: Production Ready ✅
+**Course**: CS 651  Project | **Status**: Production Ready ✅
