@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # Frontend - React SPA served by Nginx
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fitcheck-frontend
+    ports:
+      - "80:80"
+    environment:
+      - REACT_APP_API_BASE_URL=http://localhost:3001/api
+      - REACT_APP_API_MODE=mock
+      - REACT_APP_ENV=development
+    depends_on:
+      - backend
+    networks:
+      - fitcheck-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+  # Backend - Node/Express (Project 2)
+  backend:
+    image: node:18-alpine
+    container_name: fitcheck-backend
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+      - GOOGLE_CLOUD_PROJECT_ID=${REACT_APP_GOOGLE_CLOUD_PROJECT_ID}
+      - GOOGLE_CLOUD_REGION=${REACT_APP_GOOGLE_CLOUD_REGION}
+    networks:
+      - fitcheck-network
+    restart: unless-stopped
+    command: npm start
+    profiles:
+      - backend
+
+networks:
+  fitcheck-network:
+    driver: bridge
