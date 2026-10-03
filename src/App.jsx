@@ -6,12 +6,16 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import SignIn from './pages/SignIn';
 import App_Page from './pages/App';
+import { useTheme } from './redux/reduxHooks';
 import './App.css';
 
 function App() {
+  // Access theme from Redux
+  const { theme } = useTheme();
+
   return (
-    <Router>
-      <div className="app">
+    <div className={`app ${theme}`}>
+      <Router>
         <Navbar />
         <main className="main-content">
           <Routes>
@@ -25,8 +29,8 @@ function App() {
         <footer className="app-footer">
           <p>&copy; 2026 FitCheck. All rights reserved. | CS 651 Project 1</p>
         </footer>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 

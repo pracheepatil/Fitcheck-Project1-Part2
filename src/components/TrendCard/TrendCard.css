@@ -1,0 +1,131 @@
+/* Trend Card Component */
+
+.trend-card {
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  background-color: var(--surface);
+  border: 2px solid var(--border);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.trend-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.trend-card-header {
+  margin-bottom: var(--space-md);
+}
+
+.trend-card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  margin: 0;
+  font-weight: 600;
+}
+
+.trend-card-content {
+  flex: 1;
+  margin-bottom: var(--space-lg);
+}
+
+.trend-card-description {
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-md) 0;
+  line-height: 1.5;
+}
+
+.trend-card-value {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--brown);
+}
+
+/* Color Variants */
+.trend-card-green {
+  border-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+.trend-card-green .trend-card-title {
+  color: #10b981;
+}
+
+.trend-card-green .trend-card-dot {
+  background-color: #10b981;
+}
+
+.trend-card-orange {
+  border-color: #f97316;
+  background-color: #fff7ed;
+}
+
+.trend-card-orange .trend-card-title {
+  color: #f97316;
+}
+
+.trend-card-orange .trend-card-dot {
+  background-color: #f97316;
+}
+
+.trend-card-purple {
+  border-color: #a855f7;
+  background-color: #faf5ff;
+}
+
+.trend-card-purple .trend-card-title {
+  color: #a855f7;
+}
+
+.trend-card-purple .trend-card-dot {
+  background-color: #a855f7;
+}
+
+.trend-card-blue {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.trend-card-blue .trend-card-title {
+  color: #3b82f6;
+}
+
+.trend-card-blue .trend-card-dot {
+  background-color: #3b82f6;
+}
+
+/* Footer dot */
+.trend-card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.trend-card-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.trend-card:hover .trend-card-dot {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 768px) {
+  .trend-card {
+    padding: var(--space-md);
+  }
+
+  .trend-card-title {
+    font-size: 16px;
+  }
+
+  .trend-card-value {
+    font-size: 20px;
+  }
+}
