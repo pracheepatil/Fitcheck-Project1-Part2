@@ -1,0 +1,128 @@
+/* Info Block Component */
+
+.info-block {
+  padding: var(--space-lg);
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.info-block-default {
+  background-color: var(--surface);
+}
+
+.info-block-elevated {
+  box-shadow: var(--shadow-md);
+  border: none;
+}
+
+.info-block-highlighted {
+  background-color: var(--surface-secondary);
+  border: 2px solid var(--brown);
+}
+
+/* Header */
+.info-block-header {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+}
+
+.info-block-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--white);
+  border: 1px solid var(--border);
+}
+
+.info-block-title-group {
+  flex: 1;
+}
+
+.info-block-title {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  color: var(--text);
+  margin: 0 0 var(--space-xs) 0;
+  font-weight: 600;
+}
+
+.info-block-subtitle {
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Description */
+.info-block-description {
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-md) 0;
+  line-height: 1.6;
+}
+
+/* Stats Grid */
+.info-block-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+}
+
+.info-block-stat {
+  text-align: center;
+}
+
+.info-block-stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--brown);
+  font-family: var(--font-display);
+  margin-bottom: var(--space-xs);
+}
+
+.info-block-stat-label {
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-block {
+    padding: var(--space-md);
+  }
+
+  .info-block-header {
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .info-block-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .info-block-title {
+    font-size: 16px;
+  }
+
+  .info-block-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .info-block-stat-value {
+    font-size: 18px;
+  }
+}

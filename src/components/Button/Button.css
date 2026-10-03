@@ -1,0 +1,124 @@
+/* Button Component */
+
+.btn {
+  font-family: var(--font-body);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  white-space: nowrap;
+}
+
+/* Size Variants */
+.btn-small {
+  padding: var(--space-xs) var(--space-md);
+  font-size: 12px;
+}
+
+.btn-medium {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: 14px;
+}
+
+.btn-large {
+  padding: var(--space-md) var(--space-xl);
+  font-size: 16px;
+}
+
+/* Color Variants */
+.btn-primary {
+  background-color: var(--brown);
+  color: var(--white);
+  border: 2px solid var(--brown);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--brown-dark);
+  border-color: var(--brown-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--surface);
+  color: var(--brown);
+  border: 2px solid var(--border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--surface-secondary);
+  border-color: var(--brown);
+}
+
+.btn-secondary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-outlined {
+  background-color: transparent;
+  color: var(--brown);
+  border: 2px solid var(--brown);
+}
+
+.btn-outlined:hover:not(:disabled) {
+  background-color: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-outlined:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-outlined:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: var(--text-muted);
+  color: var(--text-muted);
+}
+
+.btn-success {
+  background-color: var(--success);
+  color: var(--white);
+  border: 2px solid var(--success);
+}
+
+.btn-success:hover:not(:disabled) {
+  opacity: 0.9;
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btn-small {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .btn-medium {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .btn-large {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,44 @@
+/* Link Component */
+
+.link {
+  font-family: var(--font-body);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.link-default {
+  color: var(--brown);
+}
+
+.link-default:hover {
+  color: var(--brown-dark);
+  text-decoration: underline;
+}
+
+.link-secondary {
+  color: var(--text-secondary);
+}
+
+.link-secondary:hover {
+  color: var(--brown);
+  text-decoration: underline;
+}
+
+.link-muted {
+  color: var(--text-muted);
+}
+
+.link-muted:hover {
+  color: var(--text-secondary);
+  text-decoration: underline;
+}
+
+.link-white {
+  color: var(--white);
+}
+
+.link-white:hover {
+  color: var(--taupe);
+  text-decoration: underline;
+}

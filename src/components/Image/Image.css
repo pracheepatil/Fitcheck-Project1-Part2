@@ -1,0 +1,41 @@
+/* Image Component */
+
+.img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-default {
+  border-radius: var(--radius-md);
+}
+
+.img-rounded {
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.img-bordered {
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 4px;
+}
+
+.img-elevated {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.img-thumbnail {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  padding: 4px;
+  background-color: var(--surface);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .img {
+    max-width: 100%;
+  }
+}
