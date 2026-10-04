@@ -1,135 +1,151 @@
-/* Navbar Container */
-.custom-navbar {
-  background-color: #ffffff;
-  border-bottom: 1px solid #ece6dd;
-  padding: 0;
-  z-index: 1000;
+/* FitCheck visual header - adapted from the header-link-image design
+   to work with Prachee's React Router navigation. */
+
+.fitcheck-header {
+  min-height: 84px;
+  border-bottom: 1px solid #e0d4c7;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  gap: 30px;
+  background: rgba(253, 251, 247, 0.97);
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
 }
 
-/* Container Width */
-.custom-navbar .container {
-  max-width: 1320px;
-}
-
-/* Logo */
-.navbar-brand {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
+.fitcheck-logo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
   font-weight: 700;
-  color: #1d1d1d !important;
+  letter-spacing: -0.055em;
+  color: #30251f;
+  text-decoration: none;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+.fitcheck-logo:hover {
+  color: #30251f;
   text-decoration: none;
 }
 
-.logo-version {
-  font-size: 11px;
-  color: #9a9a9a;
-  margin-left: 4px;
-  vertical-align: middle;
-}
-
-/* Nav Links */
-.navbar-nav .nav-link {
-  color: #444 !important;
-  font-size: 15px;
-  font-weight: 500;
-  margin: 0 12px;
-  position: relative;
-  transition: 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #000 !important;
-}
-
-/* Active Link */
-.navbar-nav .nav-link.active {
-  color: #000 !important;
-}
-
-.navbar-nav .nav-link.active::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 38px;
-  height: 2px;
-  background: #8f6b43;
-}
-
-/* Sign In */
-.signin-btn {
-  padding: 10px 22px;
-  border: 1px solid #d6d1c8;
-  border-radius: 8px;
-  background: #fff;
-  color: #222;
+.fitcheck-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
   font-size: 14px;
+}
+
+.fitcheck-nav-link {
+  color: #30251f;
+  text-decoration: none;
+  font-family: inherit;
   font-weight: 500;
-  margin-right: 10px;
-  transition: 0.3s;
+  padding: 8px 0;
+  border-bottom: 1px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
 }
 
-.signin-btn:hover {
-  background: #f7f3ee;
+.fitcheck-nav-link:hover {
+  color: #30251f;
+  opacity: 0.65;
+  text-decoration: none;
 }
 
-/* Sign Up */
-.signup-btn {
-  padding: 10px 22px;
-  border-radius: 8px;
-  border: none;
-  background: #927047;
-  color: white;
-  font-size: 14px;
-  font-weight: 500;
-  transition: 0.3s;
+.fitcheck-nav-link.active {
+  border-bottom-color: #30251f;
 }
 
-.signup-btn:hover {
-  background: #8c6a42;
+.fitcheck-account-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  white-space: nowrap;
 }
 
-.signin-link,
-.signup-link {
+.fitcheck-link-secondary,
+.fitcheck-link-primary {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
-  border-radius: 25px;
+  min-height: 38px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  font-size: 14px;
   font-weight: 600;
-  white-space: nowrap;
+  box-sizing: border-box;
 }
 
-.signin-link {
-  color: #333;
-  border: 1px solid #333;
-  background-color: transparent;
+.fitcheck-link-secondary {
+  color: #30251f;
+  background: transparent;
+  border: 1px solid transparent;
 }
 
-.signup-link {
-  color: white;
-  background-color: #222;
-  border: 1px solid #222;
+.fitcheck-link-secondary:hover {
+  color: #30251f;
+  text-decoration: none;
+  background: #f1e9df;
 }
 
-.signin-link:hover,
-.signup-link:hover {
-  opacity: 0.8;
+.fitcheck-link-primary {
+  color: #fffaf4;
+  background: #30251f;
+  border: 1px solid #30251f;
 }
 
-/* Mobile */
-@media (max-width: 991px) {
-  .navbar-nav {
-    margin-top: 20px;
+.fitcheck-link-primary:hover {
+  color: #fffaf4;
+  text-decoration: none;
+  opacity: 0.88;
+}
+
+@media (max-width: 1100px) {
+  .fitcheck-header {
+    gap: 20px;
+    padding: 0 3%;
   }
 
-  .navbar-nav .nav-link {
-    margin: 10px 0;
+  .fitcheck-header-nav {
+    gap: 17px;
+  }
+}
+
+@media (max-width: 760px) {
+  .fitcheck-header {
+    min-height: 72px;
+    padding: 0 20px;
+    gap: 12px;
   }
 
-  .auth-buttons {
-    margin-top: 20px;
+  .fitcheck-logo {
+    font-size: 27px;
+  }
+
+  .fitcheck-header-nav {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 20px;
+    background: #fffcf7;
+    border-bottom: 1px solid #e0d4c7;
+  }
+
+  .fitcheck-nav-link {
+    padding: 12px 0;
+  }
+
+  .fitcheck-account-actions .fitcheck-link-secondary {
+    display: none;
+  }
+
+  .fitcheck-account-actions .fitcheck-link-primary {
+    padding: 8px 13px;
   }
 }

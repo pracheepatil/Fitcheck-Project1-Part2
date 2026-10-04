@@ -1,70 +1,58 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg custom-navbar">
-      <div className="container">
+    <header className="fitcheck-header">
+      <Link to="/" className="fitcheck-logo">
+        FitCheck
+      </Link>
 
-        <NavLink className="navbar-brand" to="/">
-          FitCheck
-          <span className="logo-version">V.02</span>
+      <nav className="fitcheck-header-nav" aria-label="Main navigation">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `fitcheck-nav-link ${isActive ? "active" : ""}`
+          }
+        >
+          Home
         </NavLink>
 
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+        <NavLink
+          to="/discover"
+          className={({ isActive }) =>
+            `fitcheck-nav-link ${isActive ? "active" : ""}`
+          }
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+          Discover
+        </NavLink>
 
-        <div
-          className="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            `fitcheck-nav-link ${isActive ? "active" : ""}`
+          }
         >
-          <ul className="navbar-nav align-items-center">
+          About Us
+        </NavLink>
 
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">
-                Home
-              </NavLink>
-            </li>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            `fitcheck-nav-link ${isActive ? "active" : ""}`
+          }
+        >
+          Contact
+        </NavLink>
+      </nav>
 
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/discover">
-                Discover
-              </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
-                About Us
-              </NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/contact">
-                Contact
-              </NavLink>
-            </li>
-
-          </ul>
-
-          <div className="ms-4 auth-buttons">
-          <NavLink to="/signin" className="signin-link">
-            Sign in
-          </NavLink>
-
-          {/* <NavLink to="/signup" className="signup-link">
-            Sign up
-          </NavLink> */}
-        </div>
-        </div>
+      <div className="fitcheck-account-actions">
+        <NavLink to="/signin" className="fitcheck-link-secondary">
+          Sign in
+        </NavLink>
 
       </div>
-    </nav>
+    </header>
   );
 }
 

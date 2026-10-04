@@ -3,21 +3,26 @@ import './Image.css';
 
 const Image = ({
   src,
-  alt = 'image',
-  variant = 'default',
-  width = '100%',
-  height = 'auto',
+  alt = '',
   className = '',
+  variant = 'default',
+  loading = 'lazy',
   ...props
 }) => {
-  const imgClass = `img img-${variant} ${className}`.trim();
+  const classes = [
+    'fitcheck-image',
+    `fitcheck-image-${variant}`,
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   return (
     <img
       src={src}
       alt={alt}
-      className={imgClass}
-      style={{ width, height, maxWidth: '100%', display: 'block' }}
+      className={classes}
+      loading={loading}
       {...props}
     />
   );
