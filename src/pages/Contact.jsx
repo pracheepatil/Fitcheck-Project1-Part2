@@ -1,113 +1,136 @@
-import React, { useState } from 'react';
-import FormInput from '../components/FormInput';
-import Button from '../components/Button';
-import API from '../services/api';
+import "./Contact.css";
 
-export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      await API.submitContact(formData);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    } finally {
-      setLoading(false);
-    }
+function Contact() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert("Your message has been sent!");
   };
 
   return (
-    <div className="page-container">
-      <section className="section">
-        <h1 className="section-title">Contact Us</h1>
-        <p style={{ textAlign: 'center', marginBottom: 'var(--space-xl)' }}>
-          Have questions? We'd love to hear from you. Send us a message!
-        </p>
-      </section>
+    <main className="contact-page">
+      <div className="contact-container">
+        <section className="contact-info">
+          <p className="contact-eyebrow">GET IN TOUCH</p>
 
-      <div className="form-container">
-        {submitted && (
-          <div style={{
-            background: 'var(--color-green-light)',
-            color: 'var(--color-white)',
-            padding: 'var(--space-md)',
-            borderRadius: 'var(--radius-md)',
-            marginBottom: 'var(--space-lg)',
-            textAlign: 'center'
-          }}>
-            ✓ Thank you! Your message has been sent successfully.
+          <h1>
+            Let’s
+            <br />
+            Connect.
+          </h1>
+
+          <p className="contact-description">
+            Have a question, suggestion or just want to say hi? We’d love to
+            hear from you.
+          </p>
+
+          <div className="contact-details">
+            <div className="contact-detail">
+              <span className="contact-icon">✉</span>
+              <div>
+                <strong>Email</strong>
+                <p>hello@fitcheck.com</p>
+              </div>
+            </div>
+
+            <div className="contact-detail">
+              <span className="contact-icon">⌕</span>
+              <div>
+                <strong>Phone</strong>
+                <p>+91 98765 43210</p>
+              </div>
+            </div>
+
+            <div className="contact-detail">
+              <span className="contact-icon">●</span>
+              <div>
+                <strong>Location</strong>
+                <p>Bengaluru, India</p>
+              </div>
+            </div>
+
+            <div className="contact-detail">
+              <span className="contact-icon">♪</span>
+              <div>
+                <strong>Follow Us</strong>
+                <div className="social-links">
+                  <a href="#instagram">◎</a>
+                  <a href="#twitter">𝕏</a>
+                  <a href="#youtube">▶</a>
+                  <a href="#linkedin">in</a>
+                </div>
+              </div>
+            </div>
           </div>
-        )}
+        </section>
 
-        <form onSubmit={handleSubmit}>
-          <FormInput
-            label="Name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="Your name"
-          />
+        <section className="contact-form-card">
+          <h2>Send Us a Message</h2>
 
-          <FormInput
-            label="Email"
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="your@email.com"
-          />
+          <form onSubmit={handleSubmit}>
+            <div className="contact-form-group">
+              <label htmlFor="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="John Doe"
+                required
+              />
+            </div>
 
-          <FormInput
-            label="Subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-            placeholder="How can we help?"
-          />
+            <div className="contact-form-group">
+              <label htmlFor="email">Your Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="message" className="form-label">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              placeholder="Tell us more..."
-              className="form-input"
-              style={{ resize: 'vertical', minHeight: '150px' }}
-            />
-          </div>
+            <div className="contact-form-group">
+              <label htmlFor="subject">Subject</label>
+              <select id="subject" required defaultValue="">
+                <option value="" disabled>
+                  How can we help?
+                </option>
+                <option value="general">General question</option>
+                <option value="feedback">Feedback</option>
+                <option value="support">Support</option>
+              </select>
+            </div>
 
-          <Button type="submit" variant="primary" size="lg" disabled={loading}>
-            {loading ? 'Sending...' : 'Send Message'}
-          </Button>
-        </form>
+            <div className="contact-form-group">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                rows="4"
+                placeholder="Type your message here..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" className="send-message-btn">
+              Send Message
+            </button>
+          </form>
+
+          <p className="response-time">
+            We usually respond within 24 hours.
+          </p>
+
+          <p className="handwritten-text">
+            Good
+            <br />
+            People
+            <br />
+            Great
+            <br />
+            Style ♥
+          </p>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }
+
+export default Contact;

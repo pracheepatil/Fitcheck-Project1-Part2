@@ -1,75 +1,119 @@
-import React from 'react';
+import "./About.css";
+import styleWomen from "../assets/model-1.png";
+import styleman from  "../assets/style-man.png"
 
-export default function About() {
-  const team = [
-    { name: 'Alice Johnson', role: 'Product Lead', icon: '👩‍💼' },
-    { name: 'Bob Chen', role: 'Tech Lead', icon: '👨‍💻' },
-    { name: 'Carol Smith', role: 'Design Lead', icon: '👩‍🎨' }
-  ];
-
-  const tech = [
-    { name: 'React', icon: '⚛️' },
-    { name: 'Firebase', icon: '🔥' },
-    { name: 'Google Cloud', icon: '☁️' },
-    { name: 'AI/ML', icon: '🤖' }
-  ];
-
+function About() {
   return (
-    <div className="page-container">
-      <section className="section">
-        <h1 className="section-title">About FitCheck</h1>
-        <p style={{ fontSize: '18px', maxWidth: '600px', lineHeight: '1.8' }}>
-          FitCheck is a cutting-edge fashion technology platform designed to help you make confident outfit choices. 
-          Our mission is to democratize personal styling through AI and machine learning, making professional fashion 
-          advice accessible to everyone.
-        </p>
-      </section>
+    <main className="about-page">
+      <div className="container about-container">
+        {/* Hero Section */}
+        <section className="row align-items-center about-hero">
+          <div className="col-lg-5">
+            <p className="eyebrow">ABOUT US</p>
 
-      <section className="section">
-        <h2 className="section-title">Our Team</h2>
-        <div className="grid grid-3">
-          {team.map((member, index) => (
-            <div key={index} className="feature-card">
-              <div className="feature-card-icon">{member.icon}</div>
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
+            <h1 className="about-title">
+              Style for
+              <br />
+              Everyone.
+            </h1>
+
+            <p className="about-text">
+              Style is personal. FitCheck is a space to notice what feels like
+              you, try something new, and build confidence in the clothes you
+              already love.
+            </p>
+
+            <p className="about-text">
+              From everyday outfits to your next favorite aesthetic, a little
+              reflection can make getting dressed feel easier.
+            </p>
+          </div>
+
+          <div className="col-lg-7">
+            <div className="style-collage">
+              <img
+                src={styleman}
+                alt="Man wearing a stylish outfit"
+                className="man-image"
+              />
+
+              <img
+                src={styleWomen}
+                alt="Woman wearing a stylish outfit"
+                className="woman-image"
+              />
+
+              <p className="collage-caption">
+                Different styles.
+                <br />
+                Same confidence.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <div className="divider"></div>
+        {/* Information Cards */}
+        <section className="row g-3 about-cards">
+          <div className="col-lg-4 col-md-6">
+            <div className="about-card">
+              <div className="card-icon">♧</div>
 
-      <section className="section">
-        <h2 className="section-title">Technology Stack</h2>
-        <div className="grid grid-4">
-          {tech.map((item, index) => (
-            <div key={index} className="feature-card">
-              <div className="feature-card-icon">{item.icon}</div>
-              <h3>{item.name}</h3>
-              <p>Powering FitCheck</p>
+              <h2>Our Mission</h2>
+
+              <p>
+                Make personal styling feel approachable, creative, and part of
+                everyday life.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
 
-      <section className="section">
-        <h2 className="section-title">Our Values</h2>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <div style={{ marginBottom: 'var(--space-lg)' }}>
-            <h3>Innovation</h3>
-            <p>We continuously improve our AI models to provide the most accurate styling recommendations.</p>
+          <div className="col-lg-4 col-md-6">
+            <div className="about-card">
+              <div className="card-icon">✧</div>
+
+              <h2>Our Vision</h2>
+
+              <p>
+                A space where everyone can explore their taste and feel
+                confident in what they wear.
+              </p>
+            </div>
           </div>
-          <div style={{ marginBottom: 'var(--space-lg)' }}>
-            <h3>Accessibility</h3>
-            <p>Fashion advice should be available to everyone, regardless of budget or experience level.</p>
+
+          <div className="col-lg-4 col-md-12">
+            <div className="about-card">
+              <div className="card-icon">♡</div>
+
+              <h2>Our Approach</h2>
+
+              <p>
+                Start with your own outfits. Notice the details. Try small
+                changes that feel right for you.
+              </p>
+            </div>
           </div>
-          <div>
-            <h3>Sustainability</h3>
-            <p>We encourage mindful fashion choices that benefit both you and the environment.</p>
+        </section>
+
+        {/* Bottom Feature Strip */}
+        <section className="feature-strip row text-center">
+          <div className="col-md-4">
+            <h3>Aesthetic Analyzer</h3>
+            <p>Outfit details &amp; style patterns</p>
           </div>
-        </div>
-      </section>
-    </div>
+
+          <div className="col-md-4">
+            <h3>Style Mentor</h3>
+            <p>Weekly ideas &amp; inspiration</p>
+          </div>
+
+          <div className="col-md-4">
+            <h3>You, always.</h3>
+            <p>Your taste comes first</p>
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }
+
+export default About;

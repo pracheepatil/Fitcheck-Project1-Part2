@@ -1,123 +1,81 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import FormInput from '../components/FormInput';
-import Button from '../components/Button';
-import authService from '../services/auth';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./SignIn.css";
+import fashionImage from "../assets/style-man.png";
 
-export default function SignIn() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
-
-  const [rememberMe, setRememberMe] = useState(false);
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
-
-    try {
-      const result = await authService.login(formData.email, formData.password);
-      if (result.success) {
-        if (rememberMe) {
-          localStorage.setItem('rememberEmail', formData.email);
-        }
-        navigate('/app');
-      }
-    } catch (err) {
-      setError('Login failed. Please try again.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
+function SignIn() {
   return (
-    <div className="page-container">
-      <section className="section">
-        <h1 className="section-title">Sign In</h1>
-        <p style={{ textAlign: 'center', marginBottom: 'var(--space-xl)' }}>
-          Access your FitCheck account
-        </p>
-      </section>
+    <main className="signin-page">
+      <section className="signin-card">
+        <div className="signin-form-section">
+          <p className="eyebrow">A LITTLE MORE YOU</p>
 
-      <div className="form-container">
-        {error && (
-          <div style={{
-            background: '#fee2e2',
-            color: '#991b1b',
-            padding: 'var(--space-md)',
-            borderRadius: 'var(--radius-md)',
-            marginBottom: 'var(--space-lg)',
-            border: '1px solid #fecaca'
-          }}>
-            ⚠️ {error}
+          <h1>
+            Welcome
+            <br />
+            Back.
+          </h1>
+
+          <p className="signin-subtitle">
+            Your outfits, ideas, and inspiration in one place.
+          </p>
+
+          <div className="demo-notice">
+            Interactive account preview. No account is created and no password
+            is stored.
           </div>
-        )}
 
-        <form onSubmit={handleSubmit}>
-          <FormInput
-            label="Email"
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="your@email.com"
-          />
-
-          <FormInput
-            label="Password"
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            placeholder="Enter your password"
-          />
-
-          <div className="form-group">
-            <label style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)' }}>
+          <form>
+            <div className="form-group">
+              <label htmlFor="email">Email address</label>
               <input
-                type="checkbox"
-                checked={rememberMe}
-                onChange={(e) => setRememberMe(e.target.checked)}
-                style={{ cursor: 'pointer' }}
+                type="email"
+                id="email"
+                placeholder="you@example.com"
+                required
               />
-              <span>Remember me</span>
-            </label>
-          </div>
+            </div>
 
-          <Button type="submit" variant="primary" size="lg" disabled={loading}>
-            {loading ? 'Signing in...' : 'Sign In'}
-          </Button>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter a password"
+                required
+              />
+            </div>
 
-          <div style={{ textAlign: 'center', marginTop: 'var(--space-lg)' }}>
-            <a href="#forgot" style={{ color: 'var(--color-purple-dark)' }}>Forgot password?</a>
-          </div>
-        </form>
+            <button type="submit" className="dashboard-btn">
+              Enter demo dashboard
+            </button>
+          </form>
 
-        <div className="divider" style={{ margin: 'var(--space-lg) 0' }}></div>
+          <p className="signup-text">
+            New to FitCheck?{" "}
+            <Link to="/signup">Create an account</Link>
+          </p>
+        </div>
 
-        <div style={{ textAlign: 'center' }}>
-          <p>Or continue with:</p>
-          <div style={{ display: 'flex', gap: 'var(--space-md)', justifyContent: 'center', marginTop: 'var(--space-md)' }}>
-            <Button variant="secondary" size="md">Google</Button>
-            <Button variant="secondary" size="md">Apple</Button>
+        <div
+          className="signin-image-section"
+          style={{ backgroundImage: `url(${fashionImage})` }}
+        >
+          <div className="image-overlay"></div>
+
+          <div className="image-content">
+            <h2>
+              More than outfits.
+              <br />
+              A better you.
+            </h2>
+
+            <p>Find the details that make your style yours.</p>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
+
+export default SignIn;

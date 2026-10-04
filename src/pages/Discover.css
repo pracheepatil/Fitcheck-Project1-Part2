@@ -1,0 +1,525 @@
+.discover-page {
+  min-height: calc(100vh - 55px);
+  display: flex;
+  color: #302a24;
+  background: #f6f3ee;
+  font-family: Arial, sans-serif;
+}
+
+.discover-sidebar {
+  width: 150px;
+  flex-shrink: 0;
+  padding: 20px 10px;
+  border-right: 1px solid #e8e2d9;
+  background: #f8f5f0;
+}
+
+.sidebar-title {
+  margin: 0 0 13px;
+  color: #9a8c7c;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.side-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  padding: 8px 9px;
+  border-radius: 5px;
+  color: #6d655d;
+  font-size: 9px;
+  text-decoration: none;
+}
+
+.side-link span {
+  width: 12px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.side-link:hover,
+.side-link.active {
+  color: #59462f;
+  background: #e9dfcf;
+}
+
+.discover-content {
+  flex: 1;
+  min-width: 0;
+  padding: 22px 32px;
+}
+
+.discover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.discover-header h1 {
+  margin: 0;
+  color: #29231e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+}
+
+.discover-header p {
+  margin: 3px 0 0;
+  color: #81786e;
+  font-size: 9px;
+}
+
+.upload-outfit-btn {
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  background: #876941;
+  font-size: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  margin-bottom: 14px;
+}
+
+.stat-card {
+  min-height: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #fffdf9;
+  box-shadow: 0 2px 8px rgba(70, 50, 30, 0.04);
+}
+
+.stat-card strong {
+  color: #28231f;
+  font-size: 18px;
+}
+
+.stat-card span {
+  margin-top: 3px;
+  color: #8c8379;
+  font-size: 8px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.analysis-card,
+.journey-card,
+.inspiration-card {
+  padding: 15px;
+  border-radius: 7px;
+  background: #fffdf9;
+  box-shadow: 0 2px 8px rgba(70, 50, 30, 0.04);
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-heading h2 {
+  margin: 0;
+  color: #2e2822;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+}
+
+.sample-tag {
+  padding: 4px 7px;
+  border-radius: 10px;
+  color: #967f60;
+  background: #f2eadc;
+  font-size: 8px;
+}
+
+.analysis-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 16px;
+}
+
+.outfit-placeholder {
+  width: 46px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #806342;
+  background: #ddd2c1;
+  font-size: 25px;
+}
+
+.analysis-summary small {
+  color: #8b8176;
+  font-size: 8px;
+}
+
+.fit-score {
+  margin: 2px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.fit-score span {
+  color: #8a8177;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.score-tag {
+  padding: 4px 6px;
+  border-radius: 10px;
+  color: #8b704c;
+  background: #f0e8da;
+  font-size: 8px;
+}
+
+.progress-item {
+  margin-bottom: 11px;
+}
+
+.progress-item > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  color: #7e756b;
+  font-size: 8px;
+}
+
+.progress-track {
+  height: 3px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #eee9e0;
+}
+
+.progress-track div {
+  height: 100%;
+  background: #a28b69;
+}
+
+.view-analysis-btn {
+  margin-top: 3px;
+  padding: 7px 11px;
+  border: 1px solid #d8d0c6;
+  border-radius: 5px;
+  color: #40382f;
+  background: #fffdf9;
+  font-size: 9px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.journey-card {
+  min-height: 145px;
+}
+
+.journey-card select {
+  padding: 4px;
+  border: 1px solid #e0d9d0;
+  border-radius: 4px;
+  color: #5e554b;
+  background: white;
+  font-size: 8px;
+}
+
+.journey-chart {
+  width: 100%;
+  height: 95px;
+  margin-top: 8px;
+}
+
+.journey-chart line {
+  stroke: #e9e2d9;
+  stroke-width: 1;
+}
+
+.journey-chart polyline {
+  fill: none;
+  stroke: #9a8566;
+  stroke-width: 2;
+}
+
+.journey-chart circle {
+  fill: #9a8566;
+}
+
+.weeks {
+  display: flex;
+  justify-content: space-between;
+  color: #999087;
+  font-size: 7px;
+}
+
+.chart-caption {
+  margin: 11px 0 0;
+  color: #978e83;
+  font-size: 8px;
+}
+
+.inspiration-card h2 {
+  font-size: 14px;
+}
+
+.inspiration-card a {
+  color: #826641;
+  font-size: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.inspiration-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.inspiration-image {
+  width: 100%;
+  height: 54px;
+  display: block;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.image-one {
+  background: linear-gradient(135deg, #c7b49c, #716558);
+}
+
+.image-two {
+  background: linear-gradient(135deg, #afa69c, #393736);
+}
+
+.image-three {
+  background: linear-gradient(135deg, #c6b59a, #776550);
+}
+
+@media (max-width: 900px) {
+  .discover-sidebar {
+    width: 155px;
+  }
+
+  .discover-content {
+    padding: 24px 25px 30px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .side-link {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .discover-page {
+    display: block;
+  }
+
+  .discover-sidebar {
+    width: 100%;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    padding: 8px;
+  }
+
+  .sidebar-title {
+    display: none;
+  }
+
+  .side-link {
+    white-space: nowrap;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .discover-header {
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+
+
+
+
+/* Desktop dashboard sizing */
+.discover-page {
+  width: 100%;
+  min-height: calc(100vh - 55px);
+  display: flex;
+  background: #f6f3ee;
+}
+
+.discover-sidebar {
+  width: 180px;
+  min-height: calc(100vh - 55px);
+  padding: 24px 12px;
+}
+
+.sidebar-title {
+  margin-bottom: 16px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.side-link {
+  gap: 10px;
+  margin-bottom: 8px;
+  padding: 10px 11px;
+  font-size: 11px;
+}
+
+.side-link span {
+  width: 15px;
+  font-size: 14px;
+}
+
+.discover-content {
+  flex: 1;
+  min-width: 0;
+  min-height: calc(100vh - 55px);
+  padding: 28px 38px 35px;
+}
+
+.discover-header {
+  margin-bottom: 22px;
+}
+
+.discover-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.discover-header p {
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+.upload-outfit-btn {
+  padding: 10px 16px;
+  font-size: 10px;
+}
+
+.stats-grid {
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  min-height: 70px;
+}
+
+.stat-card strong {
+  font-size: 22px;
+}
+
+.stat-card span {
+  font-size: 9px;
+}
+
+.dashboard-grid {
+  gap: 15px;
+  align-items: stretch;
+}
+
+.analysis-card {
+  min-height: 355px;
+  padding: 18px;
+}
+
+.journey-card {
+  min-height: 180px;
+  padding: 18px;
+}
+
+.inspiration-card {
+  min-height: 120px;
+  padding: 18px;
+}
+
+.card-heading h2 {
+  font-size: 17px;
+}
+
+.analysis-summary {
+  margin: 16px 0 20px;
+}
+
+.outfit-placeholder {
+  width: 58px;
+  height: 70px;
+}
+
+.analysis-summary small {
+  font-size: 9px;
+}
+
+.fit-score {
+  font-size: 29px;
+}
+
+.progress-item {
+  margin-bottom: 14px;
+}
+
+.progress-item > div:first-child {
+  font-size: 9px;
+}
+
+.progress-track {
+  height: 4px;
+}
+
+.view-analysis-btn {
+  padding: 8px 13px;
+  font-size: 10px;
+}
+
+.journey-chart {
+  height: 110px;
+}
+
+.weeks {
+  font-size: 8px;
+}
+
+.chart-caption {
+  font-size: 9px;
+}
+
+.inspiration-image {
+  height: 65px;
+}
+
+
+

@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap");
+
+.about-page {
+  width: 100%;
+  min-height: calc(100vh - 55px);
+  margin: 0;
+  padding: 35px 0 80px;
+  background: #f6f3ee;
+}
+
+/* Hero */
+
+.about-hero {
+  min-height: 300px;
+  margin-bottom: 38px;
+}
+
+.eyebrow {
+  margin-bottom: 17px;
+  color: #8a704f;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.about-title {
+  margin: 0 0 20px;
+  font-family: "Playfair Display", serif;
+  font-size: 47px;
+  font-weight: 600;
+  line-height: 0.95;
+}
+
+.about-text {
+  max-width: 390px;
+  margin-bottom: 13px;
+  color: #77716a;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* Image Collage */
+
+.style-collage {
+  position: relative;
+  width: 370px;
+  height: 250px;
+  margin-left: auto;
+}
+
+.style-collage img {
+  position: absolute;
+  width: 150px;
+  height: 205px;
+  border: 5px solid #f7f4ef;
+  object-fit: cover;
+}
+
+.man-image {
+  top: 22px;
+  left: 20px;
+  z-index: 1;
+  transform: rotate(-7deg);
+  border-radius: 8px;
+}
+
+.woman-image {
+  top: 0;
+  right: 20px;
+  z-index: 2;
+  transform: rotate(3deg);
+  border-radius: 8px;
+}
+
+.collage-caption {
+  position: absolute;
+  right: 8px;
+  bottom: -3px;
+  z-index: 3;
+  margin: 0;
+  color: #776a5e;
+  font-family: "Playfair Display", serif;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.15;
+}
+
+/* Cards */
+
+.about-cards {
+  margin-bottom: 22px;
+}
+
+.about-card {
+  min-height: 150px;
+  padding: 20px;
+  background: #fffefa;
+  border-radius: 8px;
+  box-shadow: 0 2px 9px rgba(77, 63, 47, 0.04);
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 29px;
+  height: 29px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: #8b704d;
+  color: #fff;
+  font-size: 16px;
+}
+
+.about-card h2 {
+  margin-bottom: 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.about-card p {
+  max-width: 250px;
+  margin: 0;
+  color: #77716a;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* Feature Strip */
+
+.feature-strip {
+  padding: 20px 12px;
+  background: #ebe7df;
+}
+
+.feature-strip h3 {
+  margin: 0 0 6px;
+  font-family: "Playfair Display", serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.feature-strip p {
+  margin: 0;
+  color: #77716a;
+  font-size: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+  .about-container {
+    padding-left: 16%;
+    padding-right: 16%;
+  }
+
+  .style-collage {
+    margin: 35px auto 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-title {
+    font-size: 42px;
+  }
+
+  .style-collage {
+    width: 100%;
+    max-width: 370px;
+  }
+
+  .about-card {
+    min-height: auto;
+  }
+
+  .feature-strip {
+    padding: 25px 10px;
+  }
+
+  .feature-strip .col-md-4 + .col-md-4 {
+    margin-top: 20px;
+  }
+}

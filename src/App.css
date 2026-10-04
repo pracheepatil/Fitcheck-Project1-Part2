@@ -1,15 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+:root {
+  --bg: #f5f1ea;
+  --paper: #fdfbf7;
+  --ink: #29241d;
+  --muted: #80766b;
+  --brown: #89643e;
+  --brown-dark: #65472c;
+  --sand: #e9dfd1;
+  --line: #e4ddd2;
+  --radius: 16px;
+  --serif: "Playfair Display", Georgia, serif;
+  --shadow: 0 14px 40px #5443290a;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
 .app {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   min-height: 100vh;
 }
 
 .main-content {
-  flex: 1;
-  padding: var(--space-xl) var(--space-md);
-  max-width: 1200px;
-  margin: 0 auto;
   width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
 .app-footer {

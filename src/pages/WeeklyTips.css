@@ -1,0 +1,248 @@
+.tips-page {
+  min-height: calc(100vh - 55px);
+  display: flex;
+  background: #f6f3ee;
+  color: #302a24;
+  font-family: Arial, sans-serif;
+}
+
+.tips-sidebar {
+  width: 145px;
+  flex-shrink: 0;
+  position: relative;
+  padding: 20px 10px;
+  border-right: 1px solid #e8e2d9;
+  background: #f8f5f0;
+}
+
+.sidebar-title {
+  margin: 0 0 14px;
+  color: #9a8c7c;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.tips-side-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  padding: 8px 9px;
+  border-radius: 5px;
+  color: #6d655d;
+  font-size: 9px;
+  text-decoration: none;
+}
+
+.tips-side-link span {
+  width: 12px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.tips-side-link:hover,
+.tips-side-link.active {
+  color: #59462f;
+  background: #e9dfcf;
+}
+
+.sidebar-footer {
+  position: absolute;
+  bottom: 14px;
+  left: 15px;
+  color: #a1968b;
+  font-size: 7px;
+}
+
+.sidebar-footer p {
+  margin: 0 0 4px;
+}
+
+.sidebar-footer span {
+  font-size: 7px;
+}
+
+.tips-content {
+  flex: 1;
+  min-width: 0;
+  padding: 22px 32px 30px;
+}
+
+.tips-header {
+  margin-bottom: 17px;
+}
+
+.tips-header h1 {
+  margin: 0;
+  color: #29231e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.tips-header p {
+  margin: 5px 0 0;
+  color: #81786e;
+  font-size: 9px;
+}
+
+.featured-tip {
+  min-height: 180px;
+  display: grid;
+  grid-template-columns: 1fr 43%;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #e9decb;
+}
+
+.featured-tip-content {
+  padding: 22px 20px;
+}
+
+.tip-label {
+  margin: 0 0 14px;
+  color: #967c5d;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.featured-tip h2 {
+  margin: 0;
+  color: #322a22;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  line-height: 0.98;
+  font-weight: bold;
+}
+
+.featured-description {
+  max-width: 370px;
+  margin: 16px 0 12px;
+  color: #74695d;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.inspiration-btn,
+.try-tip-btn {
+  border: 1px solid #c9bca9;
+  border-radius: 5px;
+  color: #554737;
+  background: transparent;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.inspiration-btn {
+  padding: 7px 11px;
+}
+
+.inspiration-btn:hover,
+.try-tip-btn:hover {
+  background: #f7f1e8;
+}
+
+.featured-tip-image {
+  width: 100%;
+  height: 180px;
+  display: block;
+  object-fit: cover;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.tip-card {
+  min-height: 105px;
+  padding: 16px;
+  border-radius: 7px;
+  background: #fffdf9;
+  box-shadow: 0 2px 8px rgba(70, 50, 30, 0.04);
+}
+
+.tip-number {
+  color: #a28d70;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+}
+
+.tip-card h2 {
+  margin: 8px 0 7px;
+  color: #332b24;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.tip-card p {
+  min-height: 30px;
+  margin: 0 0 12px;
+  color: #82786e;
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+.try-tip-btn {
+  padding: 6px 9px;
+  border-color: #d8d0c5;
+  font-size: 8px;
+}
+
+.tips-note {
+  margin: 10px 0 0;
+  color: #9a9187;
+  font-size: 8px;
+}
+
+@media (max-width: 800px) {
+  .tips-content {
+    padding: 22px 18px;
+  }
+
+  .featured-tip {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-tip-image {
+    height: 220px;
+    order: -1;
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .tips-page {
+    display: block;
+  }
+
+  .tips-sidebar {
+    width: 100%;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    padding: 8px;
+  }
+
+  .sidebar-title,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .tips-side-link {
+    white-space: nowrap;
+  }
+
+  .featured-tip h2 {
+    font-size: 22px;
+  }
+}

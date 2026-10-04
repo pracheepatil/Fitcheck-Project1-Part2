@@ -1,0 +1,222 @@
+.inspiration-page {
+  min-height: calc(100vh - 55px);
+  display: flex;
+  background: #f6f3ee;
+  color: #302a24;
+  font-family: Arial, sans-serif;
+}
+
+.inspiration-sidebar {
+  width: 145px;
+  flex-shrink: 0;
+  padding: 20px 10px;
+  border-right: 1px solid #e8e2d9;
+  background: #f8f5f0;
+}
+
+.sidebar-title {
+  margin: 0 0 14px;
+  color: #9a8c7c;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.inspiration-side-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  padding: 8px 9px;
+  border-radius: 5px;
+  color: #6d655d;
+  font-size: 9px;
+  text-decoration: none;
+}
+
+.inspiration-side-link span {
+  width: 12px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.inspiration-side-link:hover,
+.inspiration-side-link.active {
+  color: #59462f;
+  background: #e9dfcf;
+}
+
+.inspiration-content {
+  flex: 1;
+  min-width: 0;
+  padding: 23px 30px 40px;
+}
+
+.inspiration-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.inspiration-header h1 {
+  margin: 0;
+  color: #29231e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.inspiration-header p {
+  margin: 5px 0 0;
+  color: #81786e;
+  font-size: 9px;
+}
+
+.collection-name {
+  color: #897d70;
+  font-size: 8px;
+}
+
+.inspiration-filters {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.filter-btn {
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 12px;
+  color: #766d63;
+  background: transparent;
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  color: white;
+  background: #927047;
+}
+
+.filter-btn:hover {
+  background: #e9dfcf;
+}
+
+.inspiration-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.inspiration-card {
+  overflow: hidden;
+  border-radius: 6px;
+  background: #fffdf9;
+  box-shadow: 0 2px 7px rgba(70, 50, 30, 0.05);
+}
+
+.inspiration-image-wrapper {
+  position: relative;
+  height: 171px;
+}
+
+.inspiration-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.heart-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #ddd5ca;
+  border-radius: 50%;
+  color: #817463;
+  background: rgba(255, 253, 249, 0.9);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.heart-btn:hover {
+  color: #927047;
+  background: white;
+}
+
+.inspiration-card-content {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 10px;
+}
+
+.inspiration-card-content h2 {
+  margin: 0 0 3px;
+  color: #332c25;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.inspiration-card-content p {
+  margin: 0;
+  color: #8b8176;
+  font-size: 7px;
+}
+
+.inspiration-score {
+  padding: 4px 5px;
+  border-radius: 50%;
+  color: #9a8567;
+  background: #f2eadc;
+  font-size: 7px;
+}
+
+@media (max-width: 850px) {
+  .inspiration-content {
+    padding: 22px 18px;
+  }
+
+  .inspiration-grid {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .inspiration-page {
+    display: block;
+  }
+
+  .inspiration-sidebar {
+    width: 100%;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    padding: 8px;
+  }
+
+  .sidebar-title {
+    display: none;
+  }
+
+  .inspiration-side-link {
+    white-space: nowrap;
+  }
+
+  .inspiration-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .inspiration-grid {
+    grid-template-columns: 1fr;
+  }
+}
