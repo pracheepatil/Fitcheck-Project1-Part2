@@ -57,9 +57,9 @@ function Navbar() {
             Sign in
           </NavLink>
 
-          <NavLink to="/signup" className="signup-link">
+          {/* <NavLink to="/signup" className="signup-link">
             Sign up
-          </NavLink>
+          </NavLink> */}
         </div>
         </div>
 

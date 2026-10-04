@@ -1,79 +1,181 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import "./SignIn.css";
-import fashionImage from "../assets/style-man.png";
 
 function SignIn() {
+  const [showSignup, setShowSignup] = useState(false);
+
+  const [signinData, setSigninData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [signupData, setSignupData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleSigninChange = (event) => {
+    const { name, value } = event.target;
+
+    setSigninData((previousData) => ({
+      ...previousData,
+      [name]: value,
+    }));
+  };
+
+  const handleSignupChange = (event) => {
+    const { name, value } = event.target;
+
+    setSignupData((previousData) => ({
+      ...previousData,
+      [name]: value,
+    }));
+  };
+
+  const handleSignupSubmit = (event) => {
+    event.preventDefault();
+
+    if (signupData.password !== signupData.confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    // Fill sign-in form with the new email and password
+    setSigninData({
+      email: signupData.email,
+      password: signupData.password,
+    });
+
+    // Hide create-account form
+    setShowSignup(false);
+  };
+
+  const handleSigninSubmit = (event) => {
+    event.preventDefault();
+
+    console.log("Sign-in submitted:", signinData);
+  };
+
   return (
     <main className="signin-page">
-      <section className="signin-card">
-        <div className="signin-form-section">
-          <p className="eyebrow">A LITTLE MORE YOU</p>
+      <div className="auth-wrapper">
 
-          <h1>
-            Welcome
-            <br />
-            Back.
-          </h1>
+        {/* Sign-in form */}
+        <section className="auth-card signin-card">
+          <h1>Sign In</h1>
+          <p className="auth-subtitle">Welcome back</p>
 
-          <p className="signin-subtitle">
-            Your outfits, ideas, and inspiration in one place.
-          </p>
-
-          <div className="demo-notice">
-            Interactive account preview. No account is created and no password
-            is stored.
-          </div>
-
-          <form>
+          <form onSubmit={handleSigninSubmit}>
             <div className="form-group">
-              <label htmlFor="email">Email address</label>
+              <label htmlFor="signin-email">Email Address</label>
               <input
+                id="signin-email"
                 type="email"
-                id="email"
-                placeholder="you@example.com"
+                name="email"
+                value={signinData.email}
+                onChange={handleSigninChange}
+                placeholder="Enter your email address"
                 required
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="signin-password">Password</label>
               <input
+                id="signin-password"
                 type="password"
-                id="password"
-                placeholder="Enter a password"
+                name="password"
+                value={signinData.password}
+                onChange={handleSigninChange}
+                placeholder="Enter your password"
                 required
               />
             </div>
 
-            <button type="submit" className="dashboard-btn">
-              Enter demo dashboard
+            <button type="submit" className="primary-button">
+              Sign In
             </button>
           </form>
 
-          <p className="signup-text">
-            New to FitCheck?{" "}
-            <Link to="/signup">Create an account</Link>
-          </p>
-        </div>
+          <button
+            type="button"
+            className="secondary-button"
+            onClick={() => setShowSignup(true)}
+          >
+            Create Account
+          </button>
+        </section>
 
-        <div
-          className="signin-image-section"
-          style={{ backgroundImage: `url(${fashionImage})` }}
-        >
-          <div className="image-overlay"></div>
+        {/* Create-account form */}
+        {showSignup && (
+          <section className="auth-card signup-card">
+            <h1>Create Account</h1>
+            <p className="signup-tagline">Make room for Style</p>
 
-          <div className="image-content">
-            <h2>
-              More than outfits.
-              <br />
-              A better you.
-            </h2>
+            <form onSubmit={handleSignupSubmit}>
+              <div className="form-group">
+                <label htmlFor="signup-full-name">Full Name</label>
+                <input
+                  id="signup-full-name"
+                  type="text"
+                  name="fullName"
+                  value={signupData.fullName}
+                  onChange={handleSignupChange}
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
 
-            <p>Find the details that make your style yours.</p>
-          </div>
-        </div>
-      </section>
+              <div className="form-group">
+                <label htmlFor="signup-email">Email Address</label>
+                <input
+                  id="signup-email"
+                  type="email"
+                  name="email"
+                  value={signupData.email}
+                  onChange={handleSignupChange}
+                  placeholder="Enter your email address"
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="signup-password">Password</label>
+                <input
+                  id="signup-password"
+                  type="password"
+                  name="password"
+                  value={signupData.password}
+                  onChange={handleSignupChange}
+                  placeholder="Create a password"
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="signup-confirm-password">
+                  Confirm Password
+                </label>
+                <input
+                  id="signup-confirm-password"
+                  type="password"
+                  name="confirmPassword"
+                  value={signupData.confirmPassword}
+                  onChange={handleSignupChange}
+                  placeholder="Confirm your password"
+                  required
+                />
+              </div>
+
+              <button type="submit" className="primary-button">
+                Submit
+              </button>
+            </form>
+          </section>
+        )}
+      </div>
     </main>
   );
 }

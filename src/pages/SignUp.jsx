@@ -118,8 +118,8 @@ function Signup() {
               </div>
 
               <button type="submit" className="btn continue-button">
-                Preview my account
-              </button>
+                Submit
+              </button>c
             </form>
           </div>
         </div>

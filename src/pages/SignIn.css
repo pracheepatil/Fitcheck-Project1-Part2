@@ -1,181 +1,115 @@
 .signin-page {
-  min-height: calc(100vh - 55px);
-  padding: 24px 0;
+  min-height: calc(100vh - 70px);
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  background: #f5f2ed;
+  align-items: center;
+  padding: 40px 20px;
+  background: #f6f1eb;
 }
 
-.signin-card {
-  width: min(825px, calc(100% - 40px));
-  min-height: 460px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  overflow: hidden;
-  border-radius: 7px;
-  background: #fffdf9;
-  box-shadow: 0 4px 18px rgba(40, 30, 20, 0.04);
-}
-
-.signin-form-section {
-  padding: 36px 42px;
+.auth-wrapper {
   display: flex;
-  flex-direction: column;
+  align-items: stretch;
   justify-content: center;
-  background: #fffdf9;
+  gap: 30px;
+  width: 100%;
+  max-width: 900px;
 }
 
-.eyebrow {
-  margin: 0 0 15px;
-  color: #8c7c68;
-  font-size: 9px;
-  font-weight: bold;
-  letter-spacing: 2px;
+.auth-card {
+  width: 390px;
+  padding: 35px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(48, 42, 36, 0.12);
 }
 
-.signin-form-section h1 {
+.auth-card h1 {
   margin: 0;
-  color: #211d19;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 31px;
-  font-weight: bold;
-  line-height: 0.98;
+  color: #302a24;
+  font-size: 30px;
+  font-weight: 600;
 }
 
-.signin-subtitle {
-  margin: 16px 0 18px;
-  color: #756e66;
-  font-size: 10px;
-}
-
-.demo-notice {
-  margin-bottom: 14px;
-  padding: 10px 9px;
-  color: #8a8177;
-  background: #f0ede8;
-  font-size: 9px;
-  line-height: 1.4;
+.auth-subtitle {
+  margin: 8px 0 25px;
+  color: #8d8175;
 }
 
 .form-group {
-  margin-bottom: 13px;
+  margin-bottom: 17px;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 7px;
   color: #302a24;
-  font-size: 10px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .form-group input {
   width: 100%;
-  height: 33px;
-  padding: 0 9px;
-  border: 1px solid #ded9d1;
-  border-radius: 5px;
+  padding: 12px 13px;
+  border: 1px solid #d8cec3;
+  border-radius: 6px;
+  color: #302a24;
   outline: none;
-  color: #403a34;
-  background: #fffefa;
-  font-size: 9px;
   box-sizing: border-box;
 }
 
 .form-group input:focus {
-  border-color: #927047;
+  border-color: #9a8068;
+  box-shadow: 0 0 0 2px rgba(154, 128, 104, 0.12);
 }
 
-.dashboard-btn {
+.primary-button,
+.secondary-button {
   width: 100%;
-  height: 33px;
-  margin-top: 1px;
-  border: 0;
-  border-radius: 5px;
-  color: white;
-  background: #927047;
-  font-size: 10px;
-  font-weight: bold;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 15px;
   cursor: pointer;
 }
 
-.dashboard-btn:hover {
-  background: #765a39;
-}
-
-.signup-text {
-  margin: 15px 0 0;
-  text-align: center;
-  color: #403a34;
-  font-size: 9px;
-}
-
-.signup-text a {
-  color: #665039;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.signin-image-section {
-  position: relative;
-  min-height: 460px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.image-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    to top,
-    rgba(25, 20, 15, 0.75),
-    rgba(25, 20, 15, 0.03) 65%
-  );
-}
-
-.image-content {
-  position: absolute;
-  z-index: 2;
-  right: 24px;
-  bottom: 26px;
-  left: 24px;
-  color: #ffffff !important;
-}
-
-.image-content h2 {
-  margin: 0;
-  color: #ffffff !important;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 28px;
-  font-weight: normal;
-  line-height: 0.98;
-}
-
-.image-content p {
-  margin: 13px 0 0;
+.primary-button {
+  border: 1px solid #302a24;
+  background: #302a24;
   color: #ffffff;
-  font-size: 9px;
 }
 
-/* Mobile view */
-@media (max-width: 768px) {
-  .signin-page {
-    padding: 20px 15px;
+.primary-button:hover {
+  background: #4a4037;
+}
+
+.secondary-button {
+  margin-top: 15px;
+  border: 1px solid #302a24;
+  background: #ffffff;
+  color: #302a24;
+}
+
+.secondary-button:hover {
+  background: #302a24;
+  color: #ffffff;
+}
+
+.signup-tagline {
+  margin: 8px 0 28px;
+  color: #8d8175;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .auth-wrapper {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .signin-card {
+  .auth-card {
     width: 100%;
-    grid-template-columns: 1fr;
-  }
-
-  .signin-form-section {
-    padding: 32px 25px;
-  }
-
-  .signin-image-section {
-    min-height: 300px;
+    max-width: 390px;
   }
 }
